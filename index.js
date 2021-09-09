@@ -30,7 +30,16 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
+function getAllMovieTitles(movies) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+
+  let moviesArr = movies.map((el) => {
+    return el.title;
+  });
+  return moviesArr;
+}
 
 /**
  * checkIfAnyMovieHasRating()
@@ -50,7 +59,14 @@ function getAllMovieTitles() {}
  *  checkIfAnyMovieHasRating(movies, "R");
  *  //> false
  */
-function checkIfAnyMovieHasRating() {}
+function checkIfAnyMovieHasRating(movies, rating) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+
+  let gMovies = movies.some((el) => el.rating === "G");
+  return true; 
+}
 
 /**
  * findById()
@@ -68,7 +84,13 @@ function checkIfAnyMovieHasRating() {}
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+  let movieID = movies.find((el) => el.imbID === el.title);
+  return movieID;
+}
 
 /**
  * filterByGenre()
@@ -92,7 +114,11 @@ function findById() {}
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+  return movies.filter((genre) => (movies.genre === movies.title ? el : [])); 
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -118,7 +144,11 @@ function filterByGenre() {}
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+}
 
 /**
  * getRottenTomatoesScoreByMovie()
@@ -144,7 +174,11 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
       { "James and the Giant Peach": "91%" },
     ];
  */
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+  if (!movies.length) {
+    throw "No movies here!";
+  }
+}
 
 // Do not change anything below this line.
 module.exports = {
