@@ -65,7 +65,7 @@ function checkIfAnyMovieHasRating(movies, rating) {
   }
 
   let gMovies = movies.some((el) => el.rating === "G");
-  return true; 
+  return true;
 }
 
 /**
@@ -118,7 +118,8 @@ function filterByGenre(movies, genre) {
   if (!movies.length) {
     throw "No movies here!";
   }
-  return movies.filter((genre) => (movies.genre === movies.title ? el : [])); 
+  return movies.filter((el) => (movies.genre === movies.title ? el : []));
+}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -148,6 +149,11 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
   if (!movies.length) {
     throw "No movies here!";
   }
+  //   let releaseYrArr = movies.filter((el) =>
+  //   el.Number(movies.released) => movies.year)
+
+  //  return;
+  // }
 }
 
 /**
